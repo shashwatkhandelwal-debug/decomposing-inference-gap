@@ -1,0 +1,29 @@
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Environments
+.venv/
+venv/
+env/
+ENV/
+.env
+
+# Testing & Coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Logs and scratch
+*.log
+scratch/
+
+# Build artifacts
+dist/
+build/
+*.egg-info/
+
+# Root test exports
+test_cnn.onnx

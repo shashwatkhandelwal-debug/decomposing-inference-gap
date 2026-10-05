@@ -1,0 +1,43 @@
+{
+  "phase": 3,
+  "description": "Memory Layout Optimization & Cache Tiling Ablation",
+  "matmul_microbenchmarks": {
+    "strided_non_contiguous_ms": 0.45,
+    "contiguous_blas_ms": 0.2944,
+    "contiguity_speedup": 1.5285326086956523
+  },
+  "tiling_sweep": [
+    {
+      "block_size": 16,
+      "median_ms": 16.0535,
+      "speedup_vs_blas": 0.018338680038620863
+    },
+    {
+      "block_size": 32,
+      "median_ms": 14.8361,
+      "speedup_vs_blas": 0.019843489865935118
+    },
+    {
+      "block_size": 64,
+      "median_ms": 14.05985,
+      "speedup_vs_blas": 0.02093905696006714
+    },
+    {
+      "block_size": 128,
+      "median_ms": 13.61,
+      "speedup_vs_blas": 0.02163115356355621
+    }
+  ],
+  "model_level_results": {
+    "tiny_cnn": {
+      "naive_p50_ms": 6.84895,
+      "layout_p50_ms": 6.80895,
+      "speedup": 1.0058746209033698
+    },
+    "tiny_transformer": {
+      "naive_p50_ms": 1.206,
+      "layout_p50_ms": 1.2392,
+      "speedup": 0.9732085216268559
+    }
+  }
+}

@@ -1,0 +1,223 @@
+{
+  "phase": 4,
+  "description": "Post-Training Affine Int8 Quantization Ablation",
+  "models": {
+    "tiny_cnn": {
+      "fp32_naive_p50_ms": 6.81155,
+      "int8_quant_p50_ms": 6.9577,
+      "speedup": 0.9789944953073574,
+      "fp32_weight_kb": 949.9140625,
+      "int8_weight_kb": 241.6328125,
+      "memory_compression_ratio": 3.9312295903520966,
+      "mse_degradation": 3.285541838593531e-09,
+      "max_abs_error": 0.00010525435209274292
+    },
+    "tiny_transformer": {
+      "fp32_naive_p50_ms": 1.2138499999999999,
+      "int8_quant_p50_ms": 4.47105,
+      "speedup": 0.2714910367810693,
+      "fp32_weight_kb": 264.5390625,
+      "int8_weight_kb": 70.6640625,
+      "memory_compression_ratio": 3.7436152570480927,
+      "mse_degradation": 5.642722692116024e-06,
+      "max_abs_error": 0.004059624237189724,
+      "layer_sensitivities": [
+        {
+          "node_name": "block_0_ln1",
+          "op_type": "LayerNorm",
+          "error_magnitude": 0.033871544757232294
+        },
+        {
+          "node_name": "block_0_q_mm",
+          "op_type": "MatMul",
+          "error_magnitude": 0.03319382124858372
+        },
+        {
+          "node_name": "block_0_k_mm",
+          "op_type": "MatMul",
+          "error_magnitude": 0.01157746103565463
+        },
+        {
+          "node_name": "block_0_v_mm",
+          "op_type": "MatMul",
+          "error_magnitude": 0.01709091221256704
+        },
+        {
+          "node_name": "block_0_q_add",
+          "op_type": "Add",
+          "error_magnitude": 0.012249801554607701
+        },
+        {
+          "node_name": "block_0_k_add",
+          "op_type": "Add",
+          "error_magnitude": 0.04283988134111249
+        },
+        {
+          "node_name": "block_0_v_add",
+          "op_type": "Add",
+          "error_magnitude": 0.038263661793620875
+        },
+        {
+          "node_name": "block_0_attn_scores_mm",
+          "op_type": "MatMul",
+          "error_magnitude": 0.015717416275337952
+        },
+        {
+          "node_name": "block_0_context_mm",
+          "op_type": "MatMul",
+          "error_magnitude": 0.009209050888873901
+        },
+        {
+          "node_name": "block_0_out_proj_mm",
+          "op_type": "MatMul",
+          "error_magnitude": 0.02665702619544774
+        },
+        {
+          "node_name": "block_0_out_proj_add",
+          "op_type": "Add",
+          "error_magnitude": 0.029870840658011256
+        },
+        {
+          "node_name": "block_0_residual1",
+          "op_type": "Add",
+          "error_magnitude": 0.008957309357664554
+        },
+        {
+          "node_name": "block_0_ln2",
+          "op_type": "LayerNorm",
+          "error_magnitude": 0.025851415866837195
+        },
+        {
+          "node_name": "block_0_ffn1_mm",
+          "op_type": "MatMul",
+          "error_magnitude": 0.008010879379046317
+        },
+        {
+          "node_name": "block_0_ffn1_add",
+          "op_type": "Add",
+          "error_magnitude": 0.02995210009262332
+        },
+        {
+          "node_name": "block_0_ffn2_mm",
+          "op_type": "MatMul",
+          "error_magnitude": 0.013377028344416893
+        },
+        {
+          "node_name": "block_0_ffn2_add",
+          "op_type": "Add",
+          "error_magnitude": 0.03895185629838326
+        },
+        {
+          "node_name": "block_0_residual2",
+          "op_type": "Add",
+          "error_magnitude": 0.009172156022222154
+        },
+        {
+          "node_name": "block_1_ln1",
+          "op_type": "LayerNorm",
+          "error_magnitude": 0.042506529746306476
+        },
+        {
+          "node_name": "block_1_q_mm",
+          "op_type": "MatMul",
+          "error_magnitude": 0.010576171218527278
+        },
+        {
+          "node_name": "block_1_k_mm",
+          "op_type": "MatMul",
+          "error_magnitude": 0.028627401282025778
+        },
+        {
+          "node_name": "block_1_v_mm",
+          "op_type": "MatMul",
+          "error_magnitude": 0.010769191403318917
+        },
+        {
+          "node_name": "block_1_q_add",
+          "op_type": "Add",
+          "error_magnitude": 0.039724047690212816
+        },
+        {
+          "node_name": "block_1_k_add",
+          "op_type": "Add",
+          "error_magnitude": 0.038254148187331374
+        },
+        {
+          "node_name": "block_1_v_add",
+          "op_type": "Add",
+          "error_magnitude": 0.028740999651419737
+        },
+        {
+          "node_name": "block_1_attn_scores_mm",
+          "op_type": "MatMul",
+          "error_magnitude": 0.03748022109827979
+        },
+        {
+          "node_name": "block_1_context_mm",
+          "op_type": "MatMul",
+          "error_magnitude": 0.006858744162312944
+        },
+        {
+          "node_name": "block_1_out_proj_mm",
+          "op_type": "MatMul",
+          "error_magnitude": 0.0249365087156359
+        },
+        {
+          "node_name": "block_1_out_proj_add",
+          "op_type": "Add",
+          "error_magnitude": 0.017047416593109
+        },
+        {
+          "node_name": "block_1_residual1",
+          "op_type": "Add",
+          "error_magnitude": 0.034017032295108066
+        },
+        {
+          "node_name": "block_1_ln2",
+          "op_type": "LayerNorm",
+          "error_magnitude": 0.024695416957054715
+        },
+        {
+          "node_name": "block_1_ffn1_mm",
+          "op_type": "MatMul",
+          "error_magnitude": 0.012978678843433449
+        },
+        {
+          "node_name": "block_1_ffn1_add",
+          "op_type": "Add",
+          "error_magnitude": 0.022901156181595408
+        },
+        {
+          "node_name": "block_1_ffn2_mm",
+          "op_type": "MatMul",
+          "error_magnitude": 0.011650846729536637
+        },
+        {
+          "node_name": "block_1_ffn2_add",
+          "op_type": "Add",
+          "error_magnitude": 0.02735543822885206
+        },
+        {
+          "node_name": "block_1_residual2",
+          "op_type": "Add",
+          "error_magnitude": 0.04247190017427869
+        },
+        {
+          "node_name": "final_ln",
+          "op_type": "LayerNorm",
+          "error_magnitude": 0.01277724980444603
+        },
+        {
+          "node_name": "head_matmul",
+          "op_type": "MatMul",
+          "error_magnitude": 0.031122990752248635
+        },
+        {
+          "node_name": "head_add",
+          "op_type": "Add",
+          "error_magnitude": 0.03707254166670994
+        }
+      ]
+    }
+  }
+}

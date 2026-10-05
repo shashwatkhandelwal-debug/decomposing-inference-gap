@@ -1,0 +1,140 @@
+{
+  "phase": 6,
+  "description": "Scaling Sweeps: Depth, Hidden Dim, and Batch Size",
+  "depth_sweep": [
+    {
+      "num_layers": 1,
+      "naive_ms": 0.5480499999999999,
+      "fused_ms": 0.3929,
+      "layout_ms": 0.54385,
+      "quantized_ms": 2.6626000000000003,
+      "combined_ms": 2.00415,
+      "onnxruntime_ms": 0.12240000000000001,
+      "pct_gap_fused": 36.450135087513196,
+      "pct_gap_layout": 0.986726183484079,
+      "pct_gap_quant": -496.7813931633973,
+      "pct_gap_combined": -342.0885704217081
+    },
+    {
+      "num_layers": 2,
+      "naive_ms": 1.17965,
+      "fused_ms": 0.7506999999999999,
+      "layout_ms": 1.2575,
+      "quantized_ms": 4.6743500000000004,
+      "combined_ms": 3.6313500000000003,
+      "onnxruntime_ms": 0.20750000000000002,
+      "pct_gap_fused": 44.12384920022632,
+      "pct_gap_layout": -8.008023453170804,
+      "pct_gap_quant": -359.4815614874248,
+      "pct_gap_combined": -252.19359152394176
+    },
+    {
+      "num_layers": 4,
+      "naive_ms": 2.54115,
+      "fused_ms": 1.64115,
+      "layout_ms": 2.5155,
+      "quantized_ms": 8.2146,
+      "combined_ms": 6.87125,
+      "onnxruntime_ms": 0.37529999999999997,
+      "pct_gap_fused": 41.5541242468315,
+      "pct_gap_layout": 1.1842925410347058,
+      "pct_gap_quant": -261.9502735646513,
+      "pct_gap_combined": -199.92612600133896
+    },
+    {
+      "num_layers": 8,
+      "naive_ms": 5.43815,
+      "fused_ms": 3.3475,
+      "layout_ms": 5.35395,
+      "quantized_ms": 16.952550000000002,
+      "combined_ms": 14.257249999999999,
+      "onnxruntime_ms": 0.72435,
+      "pct_gap_fused": 44.35169078026221,
+      "pct_gap_layout": 1.7862446433875017,
+      "pct_gap_quant": -244.27001569858717,
+      "pct_gap_combined": -187.09109423395137
+    }
+  ],
+  "dim_sweep": [
+    {
+      "d_model": 64,
+      "naive_ms": 1.187,
+      "fused_ms": 0.9783,
+      "layout_ms": 1.2583,
+      "quantized_ms": 4.33495,
+      "combined_ms": 3.52345,
+      "onnxruntime_ms": 0.20695000000000002,
+      "pct_gap_fused": 21.29483189633183,
+      "pct_gap_layout": -7.275139023519199,
+      "pct_gap_quant": -321.20299984694657,
+      "pct_gap_combined": -238.40110198459263
+    },
+    {
+      "d_model": 128,
+      "naive_ms": 2.6441999999999997,
+      "fused_ms": 1.6911,
+      "layout_ms": 2.5117000000000003,
+      "quantized_ms": 7.5746,
+      "combined_ms": 11.98535,
+      "onnxruntime_ms": 0.34975,
+      "pct_gap_fused": 41.539366732768194,
+      "pct_gap_layout": 5.774804419359734,
+      "pct_gap_quant": -214.88374120159523,
+      "pct_gap_combined": -407.1193532219052
+    },
+    {
+      "d_model": 256,
+      "naive_ms": 7.1646,
+      "fused_ms": 3.06015,
+      "layout_ms": 5.546250000000001,
+      "quantized_ms": 18.13845,
+      "combined_ms": 38.70385,
+      "onnxruntime_ms": 0.852,
+      "pct_gap_fused": 65.01996007984032,
+      "pct_gap_layout": 25.636821594905417,
+      "pct_gap_quant": -173.84041440927666,
+      "pct_gap_combined": -499.62376833634323
+    }
+  ],
+  "batch_size_sweep": [
+    {
+      "batch_size": 1,
+      "naive_ms": 1.12975,
+      "fused_ms": 0.7455,
+      "layout_ms": 1.1949999999999998,
+      "quantized_ms": 4.243650000000001,
+      "combined_ms": 3.52245,
+      "onnxruntime_ms": 0.2296,
+      "pct_gap_fused": 42.687329889462866,
+      "pct_gap_layout": -7.248791868021975,
+      "pct_gap_quant": -345.9312336832751,
+      "pct_gap_combined": -265.81125367994224
+    },
+    {
+      "batch_size": 8,
+      "naive_ms": 5.22805,
+      "fused_ms": 3.1066000000000003,
+      "layout_ms": 4.3209,
+      "quantized_ms": 13.03445,
+      "combined_ms": 11.55005,
+      "onnxruntime_ms": 0.78455,
+      "pct_gap_fused": 47.742770338696964,
+      "pct_gap_layout": 20.41521323281197,
+      "pct_gap_quant": -175.68133228311018,
+      "pct_gap_combined": -142.27523348711605
+    },
+    {
+      "batch_size": 32,
+      "naive_ms": 23.63775,
+      "fused_ms": 8.900649999999999,
+      "layout_ms": 18.06995,
+      "quantized_ms": 42.859700000000004,
+      "combined_ms": 40.5944,
+      "onnxruntime_ms": 2.8856,
+      "pct_gap_fused": 71.01481051360943,
+      "pct_gap_layout": 26.829991109354946,
+      "pct_gap_quant": -92.62630618996106,
+      "pct_gap_combined": -81.71032880930409
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  inference-benchmark:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    volumes:
+      - ..:/app
+    environment:
+      - OMP_NUM_THREADS=1
+      - PYTHONUNBUFFERED=1
+    command: bash -c "pytest tests/ -v && bash benchmarks/run_all.sh"
